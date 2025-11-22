@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  streamracer-3d:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.streamracer.rule=Host(`your-domain.com`)"
+      - "traefik.http.routers.streamracer.tls=true"
+      - "traefik.http.routers.streamracer.tls.certresolver=letsencrypt"
+    networks:
+      - coolify-network
+
+networks:
+  coolify-network:
+    external: true

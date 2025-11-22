@@ -1,0 +1,5 @@
+{
+  "name": "StreamRacer 3D",
+  "description": "An interactive 3D marble race game powered by YouTube Live Chat participants and Gemini AI commentary.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,26 @@
+name: streamracer-3d
+description: 3D Stream Racer Game with AI Commentary
+version: 1.0.0
+
+# Coolify Configuration
+services:
+  - name: streamracer-3d
+    type: docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80
+    environment:
+      - GEMINI_API_KEY
+    domains:
+      - your-domain.com
+    health_check:
+      path: /
+      port: 80
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deployment:
+      auto_deploy: true
+      zero_downtime: true
