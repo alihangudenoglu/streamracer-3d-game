@@ -13,7 +13,7 @@ interface LobbyProps {
 
 const Lobby: React.FC<LobbyProps> = ({ players, onStartGame, onAddSimulatedPlayers, onConnectYouTube, isConnecting, isPolling }) => {
   const [url, setUrl] = useState('');
-  const [apiKey, setApiKey] = useState('');
+  const [apiKey] = useState('AIzaSyBPbcXpEZupc5glSYFst2tQdKUL2n5orlQ');
   const [showSettings, setShowSettings] = useState(false);
 
   const handleConnect = (e: React.FormEvent) => {
@@ -65,15 +65,11 @@ const Lobby: React.FC<LobbyProps> = ({ players, onStartGame, onAddSimulatedPlaye
                 
                 {showSettings && (
                   <div>
-                    <label className="block text-sm text-gray-400 mb-1">YouTube Data API Anahtarı (Opsiyonel)</label>
-                    <input 
-                      type="password" 
-                      placeholder="AIzaSy..."
-                      value={apiKey}
-                      onChange={(e) => setApiKey(e.target.value)}
-                      className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 transition"
-                    />
-                    <p className="text-xs text-gray-500 mt-1">Gerçek chat için gereklidir. Boş bırakırsanız botlar eklenir.</p>
+                    <label className="block text-sm text-gray-400 mb-1">YouTube Data API Anahtarı (Otomatik)</label>
+                    <div className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-gray-400">
+                      AIzaSyBPbcXpEZupc5glSYFst2tQdKUL2n5orlQ
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">API anahtarı otomatik olarak ayarlandı.</p>
                   </div>
                 )}
 
