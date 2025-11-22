@@ -15,9 +15,3 @@ services:
       - "traefik.http.routers.streamracer.rule=Host(`your-domain.com`)"
       - "traefik.http.routers.streamracer.tls=true"
       - "traefik.http.routers.streamracer.tls.certresolver=letsencrypt"
-    networks:
-      - coolify-network
-
-networks:
-  coolify-network:
-    external: true
